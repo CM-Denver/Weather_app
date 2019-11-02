@@ -1,0 +1,55 @@
+WindowManager:
+    MainWindow:
+
+
+<MainWindow>:
+    canvas.before:
+        Color:
+            rgba: 0, 0.8, 0.5, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    name: "main"
+    city: city
+    temp: temp
+    weather_img: weather_img
+    search: search
+
+    FloatLayout:
+
+        TextInput:
+            id: search
+            multiline: False
+            pos_hint: {"x":0.2, "y":0.85}
+            size_hint: 0.5,0.06
+            font_size: 20
+
+        Button:
+            text: "Search"
+            pos_hint: {"x":0.7, "y":0.85}
+            size_hint: 0.1,0.06
+            on_release:
+                root.search_btn()
+
+        Label:
+            id: city
+            text: ""
+            color: 0,0,0,1
+            pos_hint: {"x":0.2, "y":0.7}
+            size_hint: 0.6,0.1
+            font_size: 20
+
+        Image:
+            id: weather_img
+            source: ""
+            pos_hint: {"x":0.3, "y":0.4}
+            size_hint: 0.4,0.4
+
+        Label:
+            id: temp
+            text: ""
+            color: 0,0,0,1
+            pos_hint: {"x":0.2, "y":0.4}
+            size_hint: 0.6,0.05
+            font_size: 20
